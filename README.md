@@ -171,15 +171,7 @@ If the frontend uses React Router, add `vercel.json` in the frontend root:
 
 After Vercel deployment, add the Vercel URL to `CORS_ALLOWED_ORIGINS` in Render and redeploy the backend.
 
----
 
-## Running Unit Tests
-To run the automated tests covering authentication, CRUD, isolation permissions, and filtering:
-```bash
-python manage.py test
-```
-
----
 
 ## API Endpoints Reference
 
