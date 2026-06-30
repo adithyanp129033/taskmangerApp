@@ -1,6 +1,17 @@
-# Task Manager Backend
+# Task Manager
 
-This is the backend API for the Task Manager Application, built using Python, Django, and Django REST Framework (DRF). It implements JWT Authentication, full CRUD operations on tasks, task owner isolation, and status-based task filtering.
+This is a Task Manager application with a Django REST Framework backend and a React frontend. It implements JWT Authentication, full CRUD operations on tasks, task owner isolation, and status-based task filtering.
+
+## Screenshots
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Login
+![Login](screenshots/login.png)
+
+### Register
+![Register](screenshots/register.png)
 
 ## Features
 
@@ -16,10 +27,12 @@ This is the backend API for the Task Manager Application, built using Python, Dj
 ## Tech Stack
 
 - **Framework**: Django & Django REST Framework (DRF)
+- **Frontend**: React
 - **Authentication**: SimpleJWT
 - **Database**: PostgreSQL, configured through `DATABASE_URL`
 - **Configuration**: django-environ
 - **CORS Handler**: django-cors-headers
+- **Deployment**: Render backend and Vercel frontend
 
 ---
 
@@ -73,6 +86,90 @@ Start the Django development server:
 python manage.py runserver
 ```
 The server will start at `http://127.0.0.1:8000/`.
+
+---
+
+## Frontend Setup
+
+In the React frontend project, configure the deployed backend URL.
+
+For Vite React, add this environment variable:
+```ini
+VITE_API_URL=https://your-render-backend.onrender.com
+```
+
+Use it in API calls:
+```js
+const API_URL = import.meta.env.VITE_API_URL;
+```
+
+Example registration request:
+```js
+fetch(`${API_URL}/api/auth/register/`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    username,
+    email,
+    password,
+  }),
+});
+```
+
+For Create React App, use:
+```ini
+REACT_APP_API_URL=https://your-render-backend.onrender.com
+```
+
+---
+
+## Deployment
+
+### Render Backend
+
+Use this build command:
+```bash
+pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+```
+
+Use this start command:
+```bash
+gunicorn task_manager.wsgi:application
+```
+
+Required Render environment variables:
+```ini
+SECRET_KEY=your-production-secret-key
+DEBUG=False
+DATABASE_URL=your-postgresql-database-url
+ALLOWED_HOSTS=your-render-backend.onrender.com
+CORS_ALLOWED_ORIGINS=https://your-vercel-frontend.vercel.app
+```
+
+### Vercel Frontend
+
+For a Vite React frontend:
+
+- **Framework Preset**: Vite
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Environment Variable**: `VITE_API_URL=https://your-render-backend.onrender.com`
+
+If the frontend uses React Router, add `vercel.json` in the frontend root:
+```json
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+```
+
+After Vercel deployment, add the Vercel URL to `CORS_ALLOWED_ORIGINS` in Render and redeploy the backend.
 
 ---
 

@@ -14,7 +14,7 @@ User = get_user_model()
 @permission_classes([AllowAny])
 def register_user(request):
     """
-    Function-based view for user registration.
+     view for user registration.
     """
     serializer = UserRegisterSerializer(data=request.data)
     if serializer.is_valid():
@@ -27,8 +27,8 @@ def register_user(request):
 @permission_classes([IsAuthenticated])
 def task_list_create(request):
     """
-    Function-based view for listing tasks (with filtering by completion status)
-    and creating tasks. Enforces data isolation.
+     view for listing tasks (with filtering by completion status)
+    and creating tasks. 
     """
     if request.method == 'GET':
         # Retrieve tasks belonging only to the authenticated user
@@ -57,8 +57,7 @@ def task_list_create(request):
 @permission_classes([IsAuthenticated])
 def task_detail_update_delete(request, pk):
     """
-    Function-based view for retrieving, updating, or deleting a specific task.
-    Enforces task ownership isolation (returns 404 if not owned by the user).
+    view for retrieving, updating, or deleting a specific task.
     """
     try:
         task = Task.objects.get(pk=pk, user=request.user)
