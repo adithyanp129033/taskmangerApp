@@ -9,5 +9,6 @@ backend/venv/
 backend/tasks/migrations
 #frotend
 frotend/node_modules
+frotend/.env.production
 
 
