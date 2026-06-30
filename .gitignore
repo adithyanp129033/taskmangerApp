@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+backend/db.sqlite3
+# Environments
+backend/.env
+backend/venv/
+# backend
+backend/tasks/migrations
+#frotend
+frotend/node_modules
+
+

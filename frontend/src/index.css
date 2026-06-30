@@ -1,0 +1,446 @@
+/* ===========================
+   Reset & Base
+=========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #1a1a1a;
+  background-color: #f4f4f4;
+  line-height: 1.5;
+}
+
+/* ===========================
+   Typography
+=========================== */
+h1, h2, h3 {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-green {
+  background-color: #2e7d32;
+  color: #ffffff;
+  border-color: #2e7d32;
+}
+
+.btn-green:hover {
+  background-color: #1b5e20;
+  border-color: #1b5e20;
+}
+
+.btn-green:disabled {
+  background-color: #a5d6a7;
+  border-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  background-color: #ffffff;
+  color: #2e7d32;
+  border-color: #2e7d32;
+}
+
+.btn-outline:hover {
+  background-color: #e8f5e9;
+}
+
+.btn-danger {
+  background-color: #ffffff;
+  color: #c62828;
+  border-color: #c62828;
+}
+
+.btn-danger:hover {
+  background-color: #ffebee;
+}
+
+.btn-full {
+  width: 100%;
+  text-align: center;
+}
+
+/* ===========================
+   Forms
+=========================== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  outline: none;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-input:focus {
+  border-color: #2e7d32;
+}
+
+/* ===========================
+   Alerts
+=========================== */
+.alert {
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  border: 1px solid transparent;
+}
+
+.alert-error {
+  background-color: #ffebee;
+  color: #c62828;
+  border-color: #ef9a9a;
+}
+
+.error-text {
+  font-size: 13px;
+  color: #c62828;
+  margin-top: 4px;
+}
+
+/* ===========================
+   Auth Pages
+=========================== */
+.auth-page {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.auth-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 32px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-title {
+  font-size: 22px;
+  color: #2e7d32;
+  margin-bottom: 4px;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: #666;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #555;
+}
+
+.link {
+  color: #2e7d32;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #1b5e20;
+}
+
+/* ===========================
+   Dashboard Header
+=========================== */
+.dashboard-header {
+  background-color: #2e7d32;
+  color: #ffffff;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #1b5e20;
+}
+
+.dashboard-title {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-user {
+  font-size: 14px;
+  color: #c8e6c9;
+}
+
+/* ===========================
+   Dashboard Main
+=========================== */
+.dashboard-page {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.dashboard-main {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===========================
+   Section Cards
+=========================== */
+.section-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 16px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #2e7d32;
+}
+
+/* ===========================
+   Add Task Form
+=========================== */
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-task-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.add-task-row .form-input {
+  flex: 1;
+}
+
+/* ===========================
+   Filter Tabs
+=========================== */
+.filter-tabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.filter-tab {
+  padding: 7px 20px;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #555;
+  border: none;
+  border-right: 1px solid #c8c8c8;
+  cursor: pointer;
+}
+
+.filter-tab:last-child {
+  border-right: none;
+}
+
+.filter-tab:hover {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.filter-tab-active {
+  background-color: #2e7d32;
+  color: #ffffff;
+}
+
+.filter-tab-active:hover {
+  background-color: #2e7d32;
+  color: #ffffff;
+}
+
+/* ===========================
+   Task List
+=========================== */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px 14px;
+  background-color: #ffffff;
+}
+
+.task-item.task-completed {
+  background-color: #f9f9f9;
+  border-color: #c8c8c8;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.task-checkbox {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: #2e7d32;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.task-text {
+  flex: 1;
+}
+
+.task-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.task-title.strikethrough {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task-description {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* ===========================
+   Task Edit Form
+=========================== */
+.task-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-edit-input {
+  width: 100%;
+  padding: 7px 10px;
+  font-size: 14px;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  outline: none;
+  font-family: inherit;
+}
+
+.task-edit-input:focus {
+  border-color: #2e7d32;
+}
+
+.task-edit-textarea {
+  width: 100%;
+  padding: 7px 10px;
+  font-size: 14px;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  outline: none;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.task-edit-textarea:focus {
+  border-color: #2e7d32;
+}
+
+/* ===========================
+   Misc
+=========================== */
+.status-text {
+  font-size: 14px;
+  color: #666;
+  padding: 10px 0;
+}
+
+.task-count {
+  font-size: 13px;
+  color: #888;
+  margin-top: 12px;
+  text-align: right;
+}
